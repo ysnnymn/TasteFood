@@ -1,14 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using TasteFoodIt.Context;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<TasteContext>();
-var app = builder.Build();
 
+
+var app = builder.Build();
+app.UseStatusCodePagesWithReExecute("/Error/{0}");
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

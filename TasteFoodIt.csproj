@@ -238,4 +238,22 @@
       <None Include="wwwroot\Templates\tasteit-master\scss\style.scss" />
     </ItemGroup>
 
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultAboutComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultChefComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultHeadComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultMenuComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultNavbarComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultNavbarInfoComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultOpenDayHourComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultPerfectIngredientsComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultScriptComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultSliderComponentPartial\Default.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Components\_DefaultTestimonialComponentPartial\Default.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Shared\Components\Default\_DefaultAboutComponentPartial\Default.cshtml" />
+    </ItemGroup>
+
 </Project>
