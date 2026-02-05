@@ -72,6 +72,27 @@ namespace TasteFoodIt.Migrations
                     b.ToTable("Addresses");
                 });
 
+            modelBuilder.Entity("TasteFoodIt.Entities.Admin", b =>
+                {
+                    b.Property<int>("AdminId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AdminId"));
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AdminId");
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("TasteFoodIt.Entities.Category", b =>
                 {
                     b.Property<int>("CategoryId")

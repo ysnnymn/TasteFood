@@ -1,0 +1,74 @@
+@{
+    Layout = "_Layout";
+}
+
+<style>
+    .error-container {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .error-title {
+        font-size: 120px;
+        font-weight: 800;
+        color: #ff4e4e;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .error-sub {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .error-text {
+        font-size: 18px;
+        color: #555;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+
+    .back-btn {
+        display: inline-block;
+        background: #ff4e4e;
+        color: #fff;
+        padding: 14px 35px;
+        border-radius: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        transition: 0.3s;
+        text-decoration: none;
+    }
+
+    .back-btn:hover {
+        background: #d93a3a;
+        transform: translateY(-3px);
+    }
+
+    @@media (max-width: 768px) {
+    .error-title {
+        font-size: 90px;
+    }
+    .error-sub {
+        font-size: 24px;
+    }
+    }
+</style>
+
+<div class="error-container">
+    <div class="error-title">404</div>
+    <div class="error-sub">Sayfa Bulunamadı</div>
+    <div class="error-text">
+        Aradığınız sayfa mevcut değil veya taşınmış olabilir.<br />
+        Menüye göz atmaya ne dersiniz?
+    </div>
+
+    <a class="back-btn" href="/">Ana Sayfaya Dön</a>
+</div>
