@@ -1,0 +1,43 @@
+@{
+    ViewBag.Title = "CreateAddress";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Adres Ekleme</h1>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-header">
+            <h6 class="m-0 font-weight-bold text-primary">Yeni Adres Oluştur</h6>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post">
+
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" name="Description" rows="3" style="resize: vertical;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="Email" placeholder="Email Giriniz" />
+                </div>
+
+                <div class="form-group">
+                    <label>Telefon</label>
+                    <input type="text" class="form-control" name="Phone" placeholder="Telefon Giriniz" />
+                </div>
+
+                <button class="btn btn-primary">Adres Ekle</button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>

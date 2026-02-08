@@ -1,0 +1,32 @@
+@model TasteFoodIt.Entities.OpenDayHour
+
+@{
+    ViewBag.Title = "Update Open Day Hour";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+
+    <h3>Gün & Saat Düzenle</h3>
+    <hr />
+
+    <form method="post">
+
+        <input type="hidden" name="OpenDayHourId" value="@Model.OpenDayHourId" />
+
+        <div class="mb-3">
+            <label class="form-label">Gün Adı</label>
+            <input type="text" class="form-control" name="DayName" value="@Model.DayName" required />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Çalışma Saat Aralığı</label>
+            <input type="text" class="form-control" name="OpenHourRange" value="@Model.OpenHourRange" required />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Güncelle</button>
+        <a href="/AdminOpenDayHour/OpenDayHourList" class="btn btn-secondary">Geri</a>
+
+    </form>
+
+</div>

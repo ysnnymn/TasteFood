@@ -1,0 +1,64 @@
+@model List<TasteFoodIt.Entities.Address>
+
+@{
+    ViewBag.Title = "AddressList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Adres Listesi</h1>
+
+        
+    </div>
+
+    <div class="card">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-light">
+                <tr>
+                    <th>ID</th>
+                    <th>Açıklama</th>
+                    <th>Email</th>
+                    <th>Telefon</th>
+                    <th>Sil</th>
+                    <th>Güncelle</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.AddressId</td>
+                        <td>@item.Description</td>
+                        <td>@item.Email</td>
+                        <td>@item.Phone</td>
+
+                        <td>
+                            <form method="post" asp-action="DeleteAddress" asp-controller="AdminAddress">
+                                <input type="hidden" name="id" value="@item.AddressId" />
+                                <button class="btn btn-danger btn-sm">Sil</button>
+                            </form>
+                        </td>
+
+                        <td>
+                            <a href="/AdminAddress/UpdateAddress/@item.AddressId" class="btn btn-success btn-sm">
+                                Güncelle
+                            </a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+
+            </table>
+            @if (@Model.Count == 0)
+            {
+                <a href="/AdminAddress/CreateAddress" class="btn btn-primary">
+                    Yeni Adres Ekle
+                </a>
+            }
+        </div>
+    </div>
+</div>
