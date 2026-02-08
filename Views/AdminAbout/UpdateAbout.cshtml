@@ -1,0 +1,80 @@
+@model TasteFoodIt.Entities.About
+
+@{
+    ViewBag.Title = "UpdateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+
+    <!-- Sayfa Başlığı -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Hakkımızda Güncelleme Sayfası</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/AdminDashboard/Index">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">Hakkımızda</li>
+            <li class="breadcrumb-item active" aria-current="page">Güncelle</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card mb-4 shadow">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Hakkımızda Bilgisi Güncelle</h6>
+                </div>
+
+                <div class="card-body">
+                    <form method="post">
+
+                        <!-- Gizli ID -->
+                        <input type="hidden" name="AboutId" value="@Model.AboutId" />
+
+                        <!-- Başlık -->
+                        <div class="form-group mb-3">
+                            <label for="titleInput">Başlık</label>
+                            <input type="text" class="form-control" id="titleInput"
+                                   name="Title" value="@Model.Title">
+                        </div>
+
+                        <!-- Açıklama -->
+                        <div class="form-group mb-3">
+                            <label for="descriptionInput">Açıklama</label>
+                            <textarea class="form-control" id="descriptionInput"
+                                      name="Description" rows="5" style="resize: vertical;">@Model.Description</textarea>
+                        </div>
+
+                        <!-- Resim URL -->
+                        <div class="form-group mb-3">
+                            <label for="imageInput">Resim URL</label>
+                            <input type="text" class="form-control" id="imageInput"
+                                   name="ImageUrl" value="@Model.ImageUrl">
+                        </div>
+
+                        <!-- Önizleme (İsteğe Bağlı) -->
+                        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                        {
+                            <div class="mb-3">
+                                <label class="fw-bold">Mevcut Resim:</label><br />
+                                <img src="@Model.ImageUrl" width="200" 
+                                     style="border-radius:8px; border:1px solid #ccc;" />
+                            </div>
+                        }
+
+                        <!-- Buton -->
+                        <button type="submit" class="btn btn-success mt-3">
+                            <i class="fas fa-sync-alt"></i> Güncelle
+                        </button>
+
+                        <a href="/AdminAbout/AboutList" class="btn btn-secondary mt-3">
+                            Geri Dön
+                        </a>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
