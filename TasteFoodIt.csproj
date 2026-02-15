@@ -256,4 +256,8 @@
       <_ContentIncludedByDefault Remove="Views\Shared\Components\Default\_DefaultAboutComponentPartial\Default.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Views\AdminAbout\AdminProduct\" />
+    </ItemGroup>
+
 </Project>

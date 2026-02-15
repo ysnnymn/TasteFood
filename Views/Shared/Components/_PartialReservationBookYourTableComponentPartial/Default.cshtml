@@ -1,0 +1,64 @@
+@model TasteFoodIt.Entities.Reservation
+
+@if (TempData["Success"] != null)
+{ <div class="alert alert-success text-center">@TempData["Success"]</div> }
+	<div class="col-sm-4 p-4 p-md-5 d-flex align-items-center justify-content-center bg-primary">
+					<form  id="reservationForm" method="post" asp-controller="Rezervation" asp-action="CreateRezervation" class="appointment-form">
+						<h3 class="mb-3">Rezervasyon Oluşturma Sayfası</h3>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<input asp-for="Name" type="name" class="form-control" placeholder="Adınız-Soyadınız">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input asp-for="Email" type="email" class="form-control" placeholder="Email Adresiniz">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input asp-for="Phone" type="text" class="form-control" placeholder="Telefon Numaranız">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<div class="input-wrap">
+										<div class="icon"><span class="fa fa-calendar"></span></div>
+										<input asp-for="ReservationDate" type="text" class="form-control book_date" placeholder="Tarih Seçiniz.">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<div class="input-wrap">
+										<div class="icon"><span class="fa fa-clock-o"></span></div>
+										<input asp-for="Time" type="text" class="form-control book_time" placeholder="Saat Giriniz.">
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<div class="form-field">
+										<div class="select-wrap">
+											<div class="icon"><span class="fa fa-chevron-down"></span></div>
+											<select name="" id="" class="form-control">
+												<option value="">Kişi Sayısı</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="form-group">
+									<input type="submit" value="Rezervasyon Oluştur" class="btn btn-white py-3 px-4">
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>

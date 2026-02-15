@@ -1,0 +1,95 @@
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "/Views/Default/_DefaultLayout.cshtml";
+}
+
+<style>
+    .contact-header {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        font-size: 34px;
+        font-weight: 700;
+        color: #222;
+    }
+
+    .contact-sub {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 16px;
+        color: #666;
+    }
+
+    .contact-card {
+        background: white;
+        border-radius: 12px;
+        padding: 35px;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+        margin-bottom: 60px;
+    }
+
+    .contact-card label {
+        font-weight: 600;
+        color: #333;
+    }
+
+    .btn-contact {
+        background: #e63946;
+        border: none;
+        padding: 12px 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .btn-contact:hover {
+        background: #c62828;
+    }
+</style>
+
+<div class="container">
+
+    <div class="contact-header">Bizimle İletişime Geçin</div>
+    <div class="contact-sub">
+        Aşağıdaki formu doldurarak bizimle kolayca iletişim kurabilirsiniz.
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="contact-card">
+
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success text-center">@TempData["Success"]</div>
+                }
+
+                <form method="post" asp-action="CreateContact">
+
+                    <div class="mb-3">
+                        <label>Ad Soyad</label>
+                        <input type="text" name="NameSurname" class="form-control" placeholder="Adınızı yazın" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>E-posta</label>
+                        <input type="email" name="Email" class="form-control" placeholder="E-posta adresiniz" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Konu</label>
+                        <input type="text" name="Subject" class="form-control" placeholder="Mesajın konusu" required />
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Mesaj</label>
+                        <textarea name="Message" rows="5" class="form-control" placeholder="Mesajınızı yazın" required></textarea>
+                    </div>
+
+                    <button class="btn btn-contact w-100" type="submit">Gönder</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "/Views/Default/_DefaultLayout.cshtml";
+}
+<style>
+	/* Sol Kutu Premium Tasarım */
+	.rez-box {
+		background: linear-gradient(180deg, #d62828, #e63946);
+		padding: 40px;
+		border-radius: 12px;
+		box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+		color: white;
+	}
+
+	/* Input, Select modern style */
+	.rez-input {
+		background: #ffffff;
+		border: none;
+		border-radius: 8px;
+		height: 45px;
+		padding-left: 14px;
+		font-size: 15px;
+		transition: all 0.2s ease;
+	}
+
+	.rez-input:focus {
+		outline: none;
+		box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.3);
+	}
+
+	/* Date-Time input icon style */
+	.input-wrap {
+		position: relative;
+	}
+
+	.input-wrap .icon {
+		position: absolute;
+		right: 12px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #666;
+	}
+
+	/* Button modern */
+	.rez-btn {
+		background: #fff;
+		color: #d62828;
+		border-radius: 8px;
+		font-weight: 600;
+		border: none;
+		transition: 0.2s;
+		height: 45px;
+		font-size: 16px;
+	}
+
+	.rez-btn:hover {
+		background: #f1f1f1;
+		transform: translateY(-2px);
+	}
+
+	/* Başlık */
+	.rez-title {
+		font-size: 24px;
+		font-weight: 700;
+		margin-bottom: 25px;
+		letter-spacing: 0.5px;
+		color: #fff;
+	}
+
+</style>
+@await Component.InvokeAsync("_PartialReservationBookYourTableComponentPartial")

@@ -1,0 +1,20 @@
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body style="padding-top: 120px;">
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+@await Component.InvokeAsync("_DefaultNavbarComponentPartial")
+
+<!-- SAYFANIN KENDİ İÇERİĞİ -->
+@RenderBody()
+
+@await Component.InvokeAsync("_DefaultFooterComponentPartial")
+
+@await Component.InvokeAsync("_DefaultScriptComponentPartial")
+
+</body>
+</html>
