@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TasteFoodIt.Context;
 using TasteFoodIt.Entities;
-
 namespace TasteFoodIt.Controllers
 {
     public class AdminChefController : Controller

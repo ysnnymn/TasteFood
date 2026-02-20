@@ -1,0 +1,80 @@
+@model TasteFoodIt.Entities.Testimonial
+
+@{
+    ViewBag.Title = "Yeni Referans Ekle";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+
+    <h3 class="mb-4">Yeni Referans Ekle</h3>
+
+    <form method="post">
+
+        @Html.AntiForgeryToken()
+
+        <div class="mb-3">
+            <label class="form-label">Ad Soyad</label>
+            <input type="text" asp-for="NameSurname" class="form-control" />
+            <span asp-validation-for="NameSurname" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Başlık</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Açıklama</label>
+            <textarea asp-for="Description" 
+                      rows="4" 
+                      class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Fotoğraf URL</label>
+            <input type="text" asp-for="ImageUrl" 
+                   class="form-control" 
+                   id="imageInput" />
+        </div>
+
+        <div class="mb-3">
+            <img id="previewImage" 
+                 src="" 
+                 style="max-height:120px; display:none;" 
+                 class="rounded shadow-sm"/>
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Kaydet
+        </button>
+
+        <a href="/AdminTestimonials/TestimonialsList" 
+           class="btn btn-secondary">
+            Geri
+        </a>
+
+    </form>
+
+</div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.getElementById("imageInput")
+            .addEventListener("input", function () {
+
+                let preview = document.getElementById("previewImage");
+
+                if (this.value) {
+                    preview.src = this.value;
+                    preview.style.display = "block";
+                } else {
+                    preview.style.display = "none";
+                }
+        });
+    </script>
+}

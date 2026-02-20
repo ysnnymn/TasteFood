@@ -1,0 +1,88 @@
+@model List<TasteFoodIt.Entities.Contact>
+
+@{
+    ViewBag.Title = "ContactList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">İletişim Listesi</h1>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Ana Sayfa</a></li>
+            <li class="breadcrumb-item">İletişimler</li>
+            <li class="breadcrumb-item active" aria-current="page">İletişim İşlemleri </li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 mb-4">
+            <!-- Simple Tables -->
+            <div class="card">
+
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                        <tr>
+                            <th>Id</th>
+                            <th>Ad</th>
+                            <th>Email</th>
+                            <th>Konu</th>
+                            <th>Mesaj</th>
+                            <th>Tarih</th>
+                            <th>Durum</th>
+                            <th>İşlem</th>
+                           
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ContactId</td>
+                                <td>@item.NameSurname</td>
+                                <td>@item.Email</td>
+                                <td>@item.Subject</td>
+                                <td>@item.Message</td>
+                                <td>@item.SendDate.ToString("dd MMMM dddd yyyy") </td>
+                                <td>
+                                    @if(item.IsRead)
+                                    {
+                                        <span class="badge bg-success">Okundu</span>
+                                    }
+                                    else
+                                    {
+                                        <form 
+                                              asp-controller="AdminContact"
+                                              asp-action="MarkIsRead"
+                                              method="post">
+
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="id" value="@item.ContactId">
+
+                                            <button type="submit"
+                                                    class="badge bg-warning border-0">
+                                                Yeni
+                                            </button>
+                                        </form>
+                                    }
+                                </td>
+
+                                <td>  <form asp-controller="AdminContact" asp-action="DeleteContact" method="post"><input type="hidden" name="id" value="@item.ContactId">
+                                        <button type="submit" class="btn btn-danger">Sil</button>
+                                    </form>
+                                </td>
+
+                               
+                            </tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+    <!--Row-->
+    <!-- Modal Logout -->
+</div>

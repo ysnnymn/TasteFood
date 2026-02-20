@@ -1,0 +1,158 @@
+@model List<TasteFoodIt.Entities.Testimonial>
+
+@{
+    ViewBag.Title = "Referans Listesi";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Referans Listesi</h2>
+        <a href="/AdminTestimonials/CreateTestimonials"
+           class="btn btn-primary btn-sm">
+            + Yeni Referans
+        </a>
+    </div>
+
+    <table class="table table-bordered table-hover align-middle">
+        <thead class="table-dark">
+        <tr>
+            <th>#</th>
+            <th>Fotoğraf</th>
+            <th>Ad-Soyad</th>
+            <th>Başlık</th>
+            <th style="width:300px;">Açıklama</th>
+            <th class="text-center">İşlemler</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TestimonialId</td>
+
+                <td>
+                    <img src="@item.ImageUrl"
+                         width="60"
+                         height="60"
+                         style="object-fit:cover;"
+                         class="rounded-circle border shadow-sm" />
+                </td>
+
+                <td>@item.NameSurname</td>
+
+                <td>
+                    <span class="badge bg-info text-dark">
+                        @item.Title
+                    </span>
+                </td>
+
+                <td style="max-width:300px;">
+
+                    <div class="description-box">
+
+                        <div class="short-text">
+                            @(item.Description.Length > 60
+                                ? item.Description.Substring(0, 60) + "..."
+                                : item.Description)
+                        </div>
+
+                        <div class="full-text">
+                            @item.Description
+                        </div>
+
+                        @if (item.Description.Length > 60)
+                        {
+                            <a href="javascript:void(0);"
+                               class="toggle-text text-primary fw-semibold">
+                                Devamını Oku
+                            </a>
+                        }
+
+                    </div>
+
+                </td>
+
+                <td class="text-center">
+                    <a href="/AdminTestimonials/UpdateTestimonials/@item.TestimonialId"
+                       class="btn btn-warning btn-sm me-1">
+                        Güncelle
+                    </a>
+
+                    <form method="post"
+                          action="/AdminTestimonials/DeleteTestimonials/@item.TestimonialId"
+                          style="display:inline-block">
+
+                        <button class="btn btn-danger btn-sm"
+                                onclick="return confirm('Silmek istiyor musunuz?')">
+                            Sil
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>
+
+
+<!-- 🔥 SMOOTH ANIMATION CSS -->
+<style>
+
+    .description-box {
+        position: relative;
+    }
+
+    .full-text {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.4s ease;
+        opacity: 0;
+    }
+
+    .description-box.active .full-text {
+        max-height: 500px;
+        opacity: 1;
+    }
+
+    .description-box.active .short-text {
+        display: none;
+    }
+
+    .toggle-text {
+        display: inline-block;
+        margin-top: 6px;
+        font-size: 13px;
+        cursor: pointer;
+    }
+
+</style>
+
+
+<!-- 🔥 TOGGLE SCRIPT -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        document.querySelectorAll(".toggle-text").forEach(function (btn) {
+
+            btn.addEventListener("click", function () {
+
+                let box = this.closest(".description-box");
+
+                box.classList.toggle("active");
+
+                if (box.classList.contains("active")) {
+                    this.innerText = "Kapat";
+                } else {
+                    this.innerText = "Devamını Oku";
+                }
+
+            });
+
+        });
+
+    });
+</script>

@@ -1,0 +1,50 @@
+@model TasteFoodIt.Entities.Reservation
+
+@{
+    ViewData["Title"] = "Rezervasyon Güncelle";
+    Layout = "~/Views/AdminLayout/Index.cshtml"; 
+}
+
+<h4 class="mb-4">Rezervasyon Güncelle</h4>
+
+<form asp-action="UpdateReservation" method="post">
+    @Html.AntiForgeryToken()
+
+    <!-- Id gizli -->
+    <input type="hidden" asp-for="ReservationId" />
+
+    <div class="mb-3">
+        <label>Ad Soyad</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <input asp-for="Email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Telefon</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Tarih</label>
+        <input asp-for="ReservationDate" type="date" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Saat</label>
+        <input asp-for="Time" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Kişi Sayısı</label>
+        <input asp-for="GuestCount" class="form-control" />
+    </div>
+
+    <div class="mt-4">
+        <button type="submit" class="btn btn-primary">Güncelle</button>
+        <a asp-action="ReservationList" class="btn btn-secondary">Geri Dön</a>
+    </div>
+</form>

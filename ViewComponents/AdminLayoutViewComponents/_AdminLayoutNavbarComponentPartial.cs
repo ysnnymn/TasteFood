@@ -19,12 +19,6 @@ public class _AdminLayoutNavbarComponentPartial:ViewComponent
         return View(values);
     }
 
-    /*public ActionResult NotificationStatusChengeToTrue(int id)
-    {
-        var values = _context.Notifications.Find(id);
-        values.IsRead = true;
-        _context.SaveChanges();
-        return RedirectToAction("CategoryList", "AdminCategory");
-    }*/
+  
 
 }
