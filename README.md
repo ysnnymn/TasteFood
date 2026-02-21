@@ -25,7 +25,7 @@ Kullanıcılar rezervasyon oluşturabilir, admin panel üzerinden tüm içerik y
 # 📱 Kullanıcı Arayüzü (UI)
 
 ## 🏠 Ana Sayfa
-![Ana Sayfa](UIHome.png)
+![Ana Sayfa](images/UIHome.png)
 
 Restoran hakkında genel bilgilerin bulunduğu giriş ekranıdır.  
 Menü, rezervasyon ve iletişim sayfalarına yönlendirme içerir.
@@ -33,7 +33,7 @@ Menü, rezervasyon ve iletişim sayfalarına yönlendirme içerir.
 ---
 
 ## 📞 İletişim Sayfası
-![İletişim](UIContact.png)
+![İletişim](images/UIContact.png)
 
 Adres, telefon, e-posta ve mesaj gönderme formunun bulunduğu iletişim ekranıdır.
 
@@ -42,42 +42,42 @@ Adres, telefon, e-posta ve mesaj gönderme formunun bulunduğu iletişim ekranı
 # 🔧 Admin Paneli
 
 ## ⏰ Açık Gün & Saat Yönetimi
-![Admin Open Day Hour](AdminOpenDayHour.png)
+![Admin Open Day Hour](images/AdminOpenDayHour.png)
 
 Restoranın çalışma gün ve saatleri bu panel üzerinden düzenlenir.
 
 ---
 
 ## 🍽 Menü Yönetimi
-![Admin Menu](AdminMenu.png)
+![Admin Menu](images/AdminMenu.png)
 
 Menü öğeleri eklenebilir, güncellenebilir ve silinebilir.
 
 ---
 
 ## 📅 Rezervasyon Yönetimi
-![Admin Reservation](AdminReservation.png)
+![Admin Reservation](images/AdminReservation.png)
 
 Müşteri rezervasyonları görüntülenir ve yönetilir.
 
 ---
 
 ## 📂 Kategori Yönetimi
-![Admin Category](AdminCategory.png)
+![Admin Category](images/AdminCategory.png)
 
 Menü kategorileri (Ana Yemek, Tatlı, İçecek vb.) buradan düzenlenir.
 
 ---
 
 ## ℹ Hakkımızda Yönetimi
-![Admin About](AdminAbout.png)
+![Admin About](images/AdminAbout.png)
 
 Restoran hakkında bilgiler admin panel üzerinden güncellenebilir.
 
 ---
 
 ## 👨‍🍳 Şef Yönetimi
-![Admin Chef](AdminChef.png)
+![Admin Chef](images/AdminChef.png)
 
 Şef bilgileri ve içerikleri yönetilir.
 
