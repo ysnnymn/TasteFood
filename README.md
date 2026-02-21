@@ -91,8 +91,4 @@ Restoran hakkında bilgiler admin panel üzerinden güncellenebilir.
 | Backend    | ASP.NET Core / Node.js |
 | Database   | SQL Server / MySQL |
 
-*(Kullandığın teknolojiyi kendi projenine göre düzenleyebilirsin.)*
 
----
-
-# 📂 Proje Yapısı
